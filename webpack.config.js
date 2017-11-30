@@ -13,11 +13,12 @@ var PATHS = {
     srcPath: path.resolve(process.cwd(), 'src'),
     node_modulesPath: path.resolve('./node_modules'),
 }
+console.log(path.resolve(PATHS.libsPath,'/js/flexbile/flexible.debug.js'));
 const config = {
     entry: {
         index: './src/js/index.js',
-        flexible:'./libs/js/flexible.debug.js',
-        flexibleCss:'./libs/js/flexible_css.debug.js',
+        flexible: path.resolve(PATHS.libsPath,'/js/flexbile/flexible.debug.js'),
+        flexibleCss: path.resolve(PATHS.libsPath,'/js/flexbile/flexible_css.debug.js'),
     },
 
     output: {
@@ -85,8 +86,13 @@ const config = {
         new webpackHtmlPlugin({
             filename: 'index.html',
             template: __dirname + '/src/index.html',
-            inject: 'true',
+            inject: true,
             chunks: ['flexible','flexibleCss','index'],
+            favicon: './favicon.ico',
+            minify: {
+                removeComments:true,
+                collapseWhitespace:true,
+            }
         }),
 
         new webpack.optimize.CommonsChunkPlugin({

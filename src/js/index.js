@@ -3,8 +3,8 @@ import '../css/reset.css';
 import '../css/index.scss';
 
 
-import '../../libs/js/flexible_css.debug.js'
-import '../../libs/js/flexible.debug.js'
+import '../../libs/js/flexbile/flexible_css.debug.js'
+import '../../libs/js/flexbile/flexible.debug.js'
 $(function () {
     var wrap = document.querySelector('.text-rotater__wrap');
     var texts = ['assets', 'scripts', 'images', 'styles'];
