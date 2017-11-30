@@ -107,9 +107,7 @@ const config = {
     resolve: {
         extensions: [".js", ".json"]
     }
-
 }
-
 
 if (currentTarget == 'build') {
     config.plugins.push(
