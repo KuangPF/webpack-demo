@@ -13,12 +13,12 @@ var PATHS = {
     srcPath: path.resolve(process.cwd(), 'src'),
     node_modulesPath: path.resolve('./node_modules'),
 }
-console.log(path.resolve(PATHS.libsPath,'/js/flexbile/flexible.debug.js'));
+
 const config = {
     entry: {
         index: './src/js/index.js',
-        flexible: path.resolve(PATHS.libsPath,'/js/flexbile/flexible.debug.js'),
-        flexibleCss: path.resolve(PATHS.libsPath,'/js/flexbile/flexible_css.debug.js'),
+        flexible: path.resolve(PATHS.libsPath+'/js/flexbile/flexible.debug.js'),
+        flexibleCss: path.resolve(PATHS.libsPath+'/js/flexbile/flexible_css.debug.js'),
     },
 
     output: {
