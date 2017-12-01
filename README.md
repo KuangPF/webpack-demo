@@ -6,7 +6,8 @@
     npm run start:dev
 #### 打包
     npm run build
-    
+#### 效果
+![image](https://github.com/KuangPF/webpack-demo/blob/master/src/img/webpack-demo.gif)  
 ### 目录结构
 ```
 webpack-demo
