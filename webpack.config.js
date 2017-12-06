@@ -1,4 +1,4 @@
-let webpackHtmlPlugin = require('webpack-html-plugin');
+let webpackHtmlPlugin = require('html-webpack-plugin');
 let extractTextPlugin = require('extract-text-webpack-plugin');
 let path = require('path');
 let webpack = require('webpack');
@@ -22,7 +22,7 @@ const config = {
     },
 
     output: {
-        path: path.join(__dirname ,'/dist'),
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/dist/',
         filename: 'static/js/[name].js'
     },
@@ -36,12 +36,7 @@ const config = {
                     options: {
                     }
                 }
-            }, {
-                test: /\.html$/,
-                use: [{
-                    loader: 'html-loader'
-                }]
-            },
+            }, 
             {
                 test: /\.(css|scss)$/,
                 use: extractTextPlugin.extract({
@@ -67,7 +62,13 @@ const config = {
                         name: 'static/img/[name]-[hash:8].[ext]'
                     }
                 }]
-            }, {
+            }, 
+            {
+                test: /\.html$/,
+                use: [{
+                    loader: 'html-withimg-loader'
+                }]
+            },{
                 test: require.resolve('jquery'),
                 use: [{
                     loader: 'expose-loader',
