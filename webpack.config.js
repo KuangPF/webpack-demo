@@ -13,7 +13,7 @@ var PATHS = {
     srcPath: path.resolve(process.cwd(), './src'),
     node_modulesPath: path.resolve('./node_modules'),
 }
-console.log(path.resolve(PATHS.libsPath,'/js/flexbile/flexible.debug.js'));
+
 const config = {
     entry: {
         index: './src/js/index.js',
@@ -107,9 +107,7 @@ const config = {
     resolve: {
         extensions: [".js", ".json"]
     }
-
 }
-
 
 if (currentTarget == 'build') {
     config.plugins.push(
